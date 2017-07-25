@@ -10,3 +10,5 @@ listar(L):-
 dameCabeza([C|L],C).
 dameCola([C|L],L).
 
+%sacar los primeros dos elementos de la lista
+descabezarDosCabezas([_,_|L],L).
