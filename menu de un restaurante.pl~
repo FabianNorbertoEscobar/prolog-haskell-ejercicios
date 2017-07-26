@@ -1,0 +1,40 @@
+%entradas
+entrada(paella).
+entrada(gazpacho).
+entrada(consomé).
+
+%carnes
+carne(filete_de_cerdo).
+carne(pollo_asado).
+
+%pescados
+pescado(trucha).
+pescado(bacalao).
+
+%postres
+postre(flan).
+postre(helado).
+postre(pastel).
+
+%platos principales
+platoPrincipal(Plato):-
+    carne(Plato).
+platoPrincipal(Plato):-
+    pescado(Plato).
+
+%comidas de los menús completos
+menuCompleto(X,Y,Z):-
+    entrada(X),
+    platoPrincipal(Y),
+    postre(Z).
+
+%comidas de los menús completos que tengan consomé en las entradas
+menuConConsomé(X,Y,Z):-
+    menuCompleto(X,Y,Z),
+    X==consomé.
+
+%comidas de los menús completos que no tengan flan como postre
+menuSinFlan(X,Y,Z):-
+    menuCompleto(X,Y,Z),
+    Z\==flan.
+

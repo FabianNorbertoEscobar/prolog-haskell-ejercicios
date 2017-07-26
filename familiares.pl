@@ -27,7 +27,7 @@ hermanos(A,B):-
     padreDe(C,B),
     A\==B.
 
-%son familiares sin son padre e hijo o hermanos
+%son familiares si son padre e hijo o hermanos
 familiares(A,B):-
     padreDe(A,B).
 familiares(A,B):-
