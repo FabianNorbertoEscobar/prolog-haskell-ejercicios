@@ -38,3 +38,13 @@ menuSinFlan(X,Y,Z):-
     menuCompleto(X,Y,Z),
     Z\==flan.
 
+%bebidas
+bebida(vino).
+bebida(cerveza).
+bebida(agua_mineral).
+
+%comidas de los menús completos, incluyendo una bebida
+menuCompletoConBebida(X,Y,Z,W):-
+    menuCompleto(X,Y,Z),
+    bebida(W).
+
