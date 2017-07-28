@@ -1,0 +1,6 @@
+%potencia por multiplicaciones sucesivas
+potencia(_,0,1):-!.
+potencia(X,Y,P):-
+    Y1 is Y-1,
+    potencia(X,Y1,P1),
+    P is X*P1.
