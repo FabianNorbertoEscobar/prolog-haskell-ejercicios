@@ -1,4 +1,4 @@
-# Prolog
+# PROLOG
 Programacion Lógica
 
 La programación lógica es un tipo de paradigmas de programación dentro del paradigma de programación declarativa. 
