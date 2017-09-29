@@ -3,13 +3,26 @@ aristaDirigida(d,h,4).
 aristaDirigida(h,f,9).
 aristaDirigida(i,f,11).
 aristaDirigida(f,g,10).
+aristaDirigida(b,b,5).
 aristaDirigida(f,a,8).
 aristaDirigida(a,b,7).
 aristaDirigida(d,i,2).
 
 %nodoNoAislado
 noAislado(X):-
-    aristaDirigida(X,_,_).
+    nodosConectados(X,_).
+
+%nodoAislado
+aislado(X):-
+    not(nodosConectados(X,_)).
+
+%nodosConectados
+nodosConectados(X,Y):-
+    aristaDirigida(X,Y,_);aristaDirigida(Y,X,_).
+
+%bucle
+bucle(X):-
+    aristaDirigida(X,X,_).
 
 %costoDeLlegar
 costoDeLlegar(Inicio,Destino,Intermedio,Costo):-

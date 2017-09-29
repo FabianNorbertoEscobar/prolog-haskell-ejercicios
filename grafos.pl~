@@ -9,7 +9,19 @@ aristaDirigida(d,i,2).
 
 %nodoNoAislado
 noAislado(X):-
-    aristaDirigida(X,_,_).
+    nodosConectados(X,_).
+
+%nodoAislado
+aislado(X):-
+    not(nodosConectados(X,_)).
+
+%nodosConectados
+nodosConectados(X,Y):-
+    aristaDirigida(X,Y,_);aristaDirigida(Y,X,_).
+
+%bucle
+bucle(X):-
+    aristaDirigida(X,X,_).
 
 %costoDeLlegar
 costoDeLlegar(Inicio,Destino,Intermedio,Costo):-
