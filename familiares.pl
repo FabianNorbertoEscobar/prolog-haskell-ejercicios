@@ -21,6 +21,10 @@ abueloDe(A,B):-
     padreDe(A,C),
     padreDe(C,B).
 
+%el primero es nieto del segundo
+nietoDe(A,B):-
+    abueloDe(B,A).
+
 %hermanos
 hermanos(A,B):-
     padreDe(C,A),
