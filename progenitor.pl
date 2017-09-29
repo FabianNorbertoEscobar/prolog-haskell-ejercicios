@@ -14,4 +14,11 @@ bisabuelo(X,Y):-
     progenitor(X,Z),
     abuelo(Z,Y).
 
+%tatarabuelo
+tatarabuelo(X,Y):-
+    progenitor(X,Z),
+    bisabuelo(Z,Y).
 
+trastatarabuelo(X,Y):-
+    progenitor(X,Z),
+    tatarabuelo(Z,Y).

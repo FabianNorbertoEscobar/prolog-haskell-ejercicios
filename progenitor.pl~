@@ -9,4 +9,12 @@ abuelo(X,Y):-
     progenitor(X,Z),
     progenitor(Z,Y).
 
+%bisabuelo
+bisabuelo(X,Y):-
+    progenitor(X,Z),
+    abuelo(Z,Y).
 
+%tatarabuelo
+tatarabuelo(X,Y):-
+    progenitor(X,Z),
+    bisabuelo(Z,Y).
