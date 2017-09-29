@@ -5,11 +5,17 @@ hombre(arturo).
 
 %mujer
 mujer(maria).
+mujer(lucia).
+mujer(camila).
 
-%padre e hijo
+%padre e hij@
 padre(pedro,manuel).
 padre(pedro,arturo).
 padre(pedro,maria).
+
+%madre e hij@
+madre(maria,lucia).
+madre(maria,camila).
 
 %niño o niña
 niño(X,Y):-
@@ -19,12 +25,12 @@ niño(X,Y):-
 
 %hijo
 hijo(X,Y):-
-    padre(Y,X),
+    (padre(Y,X);madre(Y,X)),
     hombre(X).
 
 %hija
 hija(X,Y):-
-    padre(Y,X),
+    (padre(Y,X);madre(Y,X)),
     mujer(X).
 
 %hermanos
