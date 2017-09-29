@@ -43,7 +43,7 @@ productoCartesiano(N1,C1,N2,C2):-insumo(N1,C1),equipo(N2,C2).
 %union de insumos y equipos
 union(N,C):-insumo(N,C);equipo(N,C).
 
-%interseccion de insumos ey equipos
+%interseccion de insumos y equipos
 interseccion(N,C):-insumo(N,C),equipo(N,C).
 
 %diferencia entre insumos y equipos
